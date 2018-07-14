@@ -140,6 +140,7 @@ void multiview_reinforce(Mat &srcImg, unsigned char * pBuffer, int * pResults, i
 	//!!! DO NOT RELEASE pResults !!!
 	pResults = facedetect_multiview_reinforce(pBuffer, (unsigned char*)(gray.ptr(0)), gray.cols, gray.rows, (int)gray.step,
 		1.2f, 3, 48, 0, doLandmark);
+	//参数：1.2f是每次缩小图像的比例，3是人脸框的属性值，小于3则过滤掉这个人脸框， 48是最小人脸框的宽度阈值
 
 	//printf("%d faces detected.\n", (pResults ? *pResults : 0));
 	//print the detection results
